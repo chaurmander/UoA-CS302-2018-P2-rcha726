@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messenger Application</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; 
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+</head>
+
+<body>
+    
+<div class="row">
+  <div class="column">
+    Welcome! This is the main page for the COMPSYS302 messenger<br/>
+    Hello {{username}}! press the button below to see you profile<br/>
+
+    
+
+    <form action="/showSelfProfile" method="post" enctype="multipart/form-data">
+        <input type="submit" value="See Profile"/></form><br/>
+
+    <form action="/sendMessage" method="post" enctype="multipart/form-data">
+        Enter the username of the person you wish to message and then press the Send Message Button<br/>
+        Send to: <input type="text" name="userToSendTo"/><br/>
+        Message: <input type="text" name="messageToSend"/>
+        <input type="submit" value="Send Message"/><br/></form><br/>
+        
+    <form action="/history" method="post" enctype="multipart/form-data">
+        Select the user you wish to see chat history with:
+        <input type="text" name="message_username"/>
+        <input type="submit" value="See Messages"/></form><br/>
+
+
+        Type in the username and select the file you wish to send
+        <form action="/sendFile" method="post" enctype="multipart/form-data">
+        Send to: <input type="text" name="userToSendFile"/><br/>
+        Send File To: <input type="file" name="filetouser"/ accept="file_extension|audio/*|video/*| image/*|media_type">
+        <input type="submit" value="Send File"/></form><br/>
+
+     Select the username of the profile you wish to see
+    <form action="/getUserProfile" method="post" enctype="multipart/form-data">
+        Profile of: <input type="text" name="profile_username"/>
+        <input type="submit" value="Get Profile"/></form><br/>
+
+    
+
+    <form action="/signout" method="post" enctype="multipart/form-data">
+        <input type="submit" value="Signout"/></form>
+  </div>
+  <div class="column" >
+        <h2>Current Online Users</h2>
+        <p>This table show any one who has logged in.</p>
+        <form action="/displayUsers" method="post" enctype="multipart/form-data">
+        <input type="submit" value="See Online Users"/></form>
+         <p>Press the button to refresh the list.</p>
+        <table style="width:100%">
+          <tr>
+            <th>username</th>
+            <th>location</th>
+            <th>ip</th>
+            <th>port</th>
+            <th>lastLogin</th>
+              {% for n in usernameList%}
+              <tr><td>{{usernameList[loop.index0]}}</td>
+              <td>{{locationList[loop.index0]}}</td>
+              <td>{{ipList[loop.index0]}}</td>
+              <td>{{portList[loop.index0]}}</td>
+              <td>{{lastLoginList[loop.index0]}}</td></tr>
+              {% endfor %}
+          </tr>
+        </table>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>

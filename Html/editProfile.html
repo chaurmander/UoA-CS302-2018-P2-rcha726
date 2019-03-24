@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My profile</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <table style="width:50%">
+        <form action="/editProfile" method="post" enctype="multipart/form-data">
+          <tr>
+            <th>Name</th>
+            <td>
+                <input type="text" name="nameedit"/>
+          </tr>
+          <th>Position</th>
+            <td>
+                <input type="text" name="positionedit"/>
+            </td>
+           </tr>
+          <tr>
+            <th>Description</th>
+            <td>
+                <input type="text" name="descriptionedit"/>
+            </td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td>
+                <input type="text" name="locationedit"/>
+            </td>
+          </tr>
+          <tr>
+            <th>Picture</th>
+            <td>
+                <input type="text" name="pictureedit"/>
+            </td>
+          </tr>
+
+     </table>
+     <input type="submit" value="Save Changes"/></form>
+     <form action="/" method="post" enctype="multipart/form-data">
+     <input type="submit" value="Main Page"/></form>
+
+
+
+
+
+</body>
+</html>

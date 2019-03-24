@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My profile</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <table style="width:50%">
+          <tr>
+            <th>Name</th>
+            <td>{{fullname}}</td>
+          </tr>
+          <th>Position</th>
+            <td>{{position}}</td>
+           </tr>
+          <tr>
+            <th>Description</th>
+            <td>{{description}}</td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td>{{location}}</td>
+          </tr>
+          <tr>
+            <th>Picture</th>
+            <td><img src="{{picture}}"></td>
+          </tr>
+          <tr>
+            <th>Last Updated</th>
+            <td>{{lastUpdated}}</td>
+          </tr>
+
+     </table>
+     <form action="/" method="post" enctype="multipart/form-data">
+     <input type="submit" value="Main Page"/></form>
+        <form action="/showEditProfile" method="post" enctype="multipart/form-data">
+     <input type="submit" value="Edit Profile"/></form>
+
+
+
+</body>
+</html>

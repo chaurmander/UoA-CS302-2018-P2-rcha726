@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messenger Application</title>
+
+    </style>
+</head>
+
+<body>
+        {% for n in senderList%}
+              {{senderList[loop.index0]}} : {{messageList[loop.index0]}}<br/>
+        {% endfor %}
+        
+
+
+        <form action="/" method="post" enctype="multipart/form-data">
+        <input type="submit" value="Main Page"/></form>
+</body>
+</html>
